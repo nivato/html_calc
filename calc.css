@@ -1,19 +1,19 @@
 body {
-  background-color: #282828;
+  background-color: #583B1E;
   color: white;
   margin: 0px;
   padding: 0px;
 }
 
 div {
-  border: 1px solid red;
+  border: 2px solid #191919;
+  display: block;
+  padding: 0px;
 }
 
 .calculator {
-  display: block;
   width: 360px;
   height: 480px;
-  padding: 0;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
@@ -21,21 +21,19 @@ div {
 }
 
 .screen {
-  display: block;
   width: 320px;
   height: 70px;
-  padding: 0;
   margin-left: auto;
   margin-right: auto;
   margin-top: 70px;
   background-color: #A8A88B;
+  text-align: right;
+  line-height: 70px;
 }
 
 .pad {
-  display: block;
   width: 320px;
   height: 290px;
-  padding: 0px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
@@ -43,38 +41,11 @@ div {
 }
 
 .button {
-  display: block;
   float: left;
   width: 60px;
-  height: 40px;
-  padding: 0;
+  height: 38px;
+  line-height: 38px;
   margin: 8px;
   background-color: #8E8E8E;
   text-align: center;
-}
-
-input {
-  background-color: white;
-  color: black;
-}
-
-a, a:visited { text-decoration: none; color: red; }
-a:hover { text-decoration: underline; }
-
-.player-username, .player-house, .player-ready-state, .player-actions,
-.game-reference, .game-owner, .game-players, .game-actions {
-  display: inline-block;
-}
-
-.player-username, .game-owner {
-  width: 200px;
-}
-
-.game-reference {
-  width: 300px;
-}
-
-.player-house, .player-ready-state, .player-actions,
-.game-players, .game-actions {
-  width: 70px;
 }
