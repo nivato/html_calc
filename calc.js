@@ -35,6 +35,9 @@ Calculator.prototype.button_clicked = function(event){
 
 Calculator.prototype.entered_value = function(value){
     if (!isNaN(value)){
+        if (this.previous_operation === '='){
+            this.result = undefined;
+        }
         if (this.screen.text().length + 1 <= this.digits_limit){
             if ((this.screen.text() === '0') || this.enter_new_value){
                 this.screen.text(value);
@@ -44,7 +47,13 @@ Calculator.prototype.entered_value = function(value){
             }
         }
     } else if (value === '.'){
-        if (this.screen.text().length + 2 <= this.digits_limit){
+        if (this.previous_operation === '='){
+            this.result = undefined;
+        }
+        if (this.enter_new_value){
+            this.screen.text('0.');
+            this.enter_new_value = false;
+        } else if (this.screen.text().length + 2 <= this.digits_limit){
             if (this.screen.text().indexOf('.') === -1){
                 this.screen.text(this.screen.text() + value);
             }
@@ -85,7 +94,7 @@ Calculator.prototype.perform_previous_operation = function(){
     } else {
         this.result = parseFloat(this.screen.text());
     }
-    this.screen.text(this.result);
+    this.screen.text(parseFloat(this.result.toFixed(2)));
     this.enter_new_value = true;
 };
 

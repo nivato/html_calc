@@ -11,6 +11,11 @@ div {
   border: 2px solid #191919;
   display: block;
   padding: 0px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -o-user-selec: none;
+  user-select: none;
 }
 
 .calculator {
@@ -33,6 +38,11 @@ div {
   line-height: 70px;
   font-size: 40px;
   color: #222B19;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -o-user-select: text;
+  user-select: text;
 }
 
 .pad {
