@@ -58,6 +58,8 @@ Calculator.prototype.entered_value = function(value){
                 this.screen.text(this.screen.text() + value);
             }
         }
+    } else if (value === '+-'){
+        this.screen.text(-parseFloat(this.screen.text()));
     } else {
         this.operation(value);
     }
@@ -65,7 +67,7 @@ Calculator.prototype.entered_value = function(value){
 
 Calculator.prototype.operation = function(operation){
     if (operation === 'C'){
-        if (this.previous_operation === 'C'){
+        if ((this.previous_operation === 'C') || (this.previous_operation === '=')){
             this.result = undefined;
         }
         this.screen.text('0');
